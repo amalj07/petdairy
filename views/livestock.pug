@@ -1,11 +1,14 @@
 extend layout
 
-block content
-  h1= livestock.animalid
-  //- h4 Written by #{author}
-  //- p= article.body
-  //- hr
-  //- if user
-  //-   if user.id == article.author
-  //-     a.btn.btn-secondary(href='//edit/'+ article._id) Edit
-  //-     a.btn.btn-danger.delete-article(href='#', data-id= article._id) Delete
+block content 
+  h3= "Animal ID: "+livestock.animalid
+  p= "Owner ID: "+livestock.ownerid
+  p= "Owner Name: "+livestock.ownername
+  p= "Animal Type: "+livestock.animaltype
+  p= "Birth Date: "+livestock.birthdate
+  p= "Place: "+livestock.place
+  hr
+  
+  a.btn.btn-secondary(href='/livestocks/edit/'+livestock._id) Edit
+  //- a.btn.btn-danger.delete-article(href='#', data-id= livestock._id) Delete
+  a.btn.btn-danger.delete-article(href='/livestocks/delete/'+livestock._id, data-id= livestock._id) Delete

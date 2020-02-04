@@ -62,7 +62,7 @@ router.post('/add', (req, res) => {
 
 //Load edit form
 router.get('/edit/:id', ensureAuthenticated, (req, res) => {
-  Livestock.findById(req.params.id, (err, article) => {
+  Livestock.findById(req.params.id, (err, livestock) => {
     // if(article.author != req.user._id){
     //   req.flash('danger', 'Not Authorized');
     //   res.redirect('/');
@@ -107,7 +107,34 @@ router.post('/edit/:id', (req, res) => {
 })
 
 //Deleting a livestock data
-router.delete('/:id', (req, res) => {
+// router.delete('/:id', ensureAuthenticated, (req, res) => {
+//   // if(!req.user._id){
+//   //   res.status(500).send();
+//   // }
+
+//   let query = {_id: req.params.id}
+
+//   Livestock.findById(req.params.animalid, (err, livestock) =>{
+//     // if (article.author != req.user._id) {
+//     //   res.status(500).send();
+//     // } else {
+//     //   Livestock.remove(query).then( () => {
+//     //     req.flash('danger', 'Livestock details deleted');
+//     //     res.send('Success');
+//     //   }).catch( (error) => {
+//     //     console.log(error)
+//     //   });
+//     // }
+//     Livestock.remove(query).then( () => {
+//       req.flash('danger', 'Livestock details deleted');
+//       res.send('Success');
+//     }).catch( (error) => {
+//       console.log(error)
+//     });
+//   });
+// });
+
+router.get('/delete/:id', ensureAuthenticated, (req, res) => {
   // if(!req.user._id){
   //   res.status(500).send();
   // }
@@ -127,7 +154,7 @@ router.delete('/:id', (req, res) => {
     // }
     Livestock.remove(query).then( () => {
       req.flash('danger', 'Livestock details deleted');
-      res.send('Success');
+      res.redirect('/')
     }).catch( (error) => {
       console.log(error)
     });
@@ -152,7 +179,7 @@ function ensureAuthenticated(req, res,next){
     return next();
   } else{
     req.flash('danger','Please Login');
-    res.redirect('/users/login');
+    res.redirect('/officials/login');
   }
 }
 

@@ -16,16 +16,16 @@ html
               span.sr-only (current)
           if user
             li.nav-item
-              a.nav-link(href='/articles/add') Add Details
+              a.nav-link(href='/livestocks/add') Add Details
         ul.navbar-nav.navbar-right
           if user
             li.nav-item
-              a.nav-link(href='/users/logout') Logout
+              a.nav-link(href='/officials/logout') Logout
           else    
             li.nav-item
-              a.nav-link(href='/users/register') Registrer 
+              a.nav-link(href='/officials/register') Registrer 
             li.nav-item
-              a.nav-link(href='/users/login') Login
+              a.nav-link(href='/officials/login') Login
 
     .container
       != messages('message', locals)

@@ -95,10 +95,10 @@ app.get('/', (req, res) => {
 });
 
 //Route files
-const articles = require('./routes/livestocks');
-const users = require('./routes/officials');
-app.use('/articles', articles)
-app.use('/users', users)
+const livestocks = require('./routes/livestocks');
+const officials = require('./routes/officials');
+app.use('/livestocks', livestocks)
+app.use('/officials', officials)
 
 
 //Initialising server

@@ -4,9 +4,9 @@ $(document).ready( () => {
     const id = $target.attr('data-id');
     $.ajax({
       type: 'DELETE',
-      url: '/articles/'+id,
+      url: '/livestocks/'+id,
       success: (response) => {
-        alert('Delete article?');
+        alert('Delete animal data?');
         window.location.href='/';
       },
       erorr: (error) => {
