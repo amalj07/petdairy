@@ -1,12 +1,12 @@
 doctype html
 html
   head
-    title NoExPro
+    title LiveStock Management
     link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet' href='/css/style.css')
   body
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark
-      a.navbar-brand(href='/') NoExPro
+      a.navbar-brand(href='/') Eizoft
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarsExampleDefault.collapse.navbar-collapse
@@ -16,7 +16,7 @@ html
               span.sr-only (current)
           if user
             li.nav-item
-              a.nav-link(href='/articles/add') Add Articles
+              a.nav-link(href='/articles/add') Add Details
         ul.navbar-nav.navbar-right
           if user
             li.nav-item
@@ -36,7 +36,7 @@ html
       br
       hr
       footer
-        p Copyright &copy; 2020 NoExPro
+        p Copyright &copy; 2020 Eizoft
         
     script(src='/bower_components/jquery/dist/jquery.js')    
     script(src='/bower_components/bootstrap/dist/js/bootstrap.js')

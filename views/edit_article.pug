@@ -5,12 +5,45 @@ block content
     
     form(method='POST', action= '/articles/edit/'+article._id)
       #form-group
-        label name
-        input.form-control(name='title', type='text', value= article.title)
+        label Owner ID
+        input.form-control(name='ownerid', type='text')
       #form-group
-        label author
-        input.form-control(name='author', type='text', value= user.name)
+        label Owner Name
+        input.form-control(name='ownername', type='text')
       #form-group
-        label name
-        textarea.form-control(name='body')= article.body
+        label Animal ID
+        input.form-control(name='animalid', type='text')
+      #form-group
+        label Animal Type
+        input.form-control(name='animaltype', type='text')
+      #form-group
+        label Birth Date
+        input.form-control(name='birthdate', type='text')
+      #form-group
+        label Place
+        input.form-control(name='place', type='text')
+      #form-group
+        label Is the animal insured
+        br
+        label Yes
+        input(type='radio', value='true', name='insurance')
+        br
+        label No
+      #form-group
+        label Insurance No
+        input.form-control(name='insuranceno', type='text')
+      #form-group
+        label Is the animal alive
+        br
+        label Yes 
+        input(type='radio', value='true', name='insurance')
+        br
+        label No 
+        input(type='radio', value='false', name='insurance')
+      #form-group
+        label Death Date
+        input.form-control(name='deathdate', type='text')
+      #form-group
+        label Death Reason
+        input.form-control(name='deathreason', type='text')
       input.btn.btn-primary(type='submit', value='submit')
