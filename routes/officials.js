@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 
 //Bring in user model
-const User = require('../models/user');
+const User = require('../models/official');
 
 
 //Route for user register
@@ -15,13 +15,15 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
   name= req.body.name;
   email= req.body.email;
-  username= req.body.username;
+  phone= req.body.phone;
+  designation= req.body.designation;
   password= req.body.password;
   conpassword= req.body.password;
 
   req.checkBody('name', 'name is required').notEmpty();
   req.checkBody('email', 'eamil is required').notEmpty();
-  req.checkBody('username', 'username is required').notEmpty();
+  req.checkBody('phone', 'phone is required').notEmpty();
+  req.checkBody('designation', 'designation is required').notEmpty();
   req.checkBody('password', 'password is required').notEmpty();
   req.checkBody('conpassword', 'passwords donot match').equals(req.body.password);
 
@@ -37,7 +39,8 @@ router.post('/register', (req, res) => {
     let newUser = new User({
       name: name,
       email: email,
-      username: username,
+      phone: phone,
+      designation: designation,
       password: password
     });
 

@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 //Article Model
-const Article = require('../models/article');
+const Article = require('../models/livestock');
 //User Model
-const User = require('../models/user');
+const User = require('../models/official');
 
 //Adding an article
 router.get('/add', ensureAuthenticated, (req, res) => {

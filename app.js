@@ -11,7 +11,7 @@ const config = require('./config/database')
 //Initialising database
 mongoose.connect(config.database, {useNewUrlParser: true, useUnifiedTopology: true
 }).then( () => {
-  console.log("Connected to database NoExPro");
+  console.log("Connected to database LiveStock");
 }).catch( (error) => {
   console.log(error);
 });
@@ -37,7 +37,7 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Bring in article model
-const Article = require('./models/article');
+const Article = require('./models/livestock');
 
 //Express session middleware
 app.use(session({
@@ -95,8 +95,8 @@ app.get('/', (req, res) => {
 });
 
 //Route files
-const articles = require('./routes/articles');
-const users = require('./routes/users');
+const articles = require('./routes/livestocks');
+const users = require('./routes/officials');
 app.use('/articles', articles)
 app.use('/users', users)
 
