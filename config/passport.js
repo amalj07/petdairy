@@ -5,9 +5,9 @@ const config = require('../config/database');
 
 module.exports = (passport) => {
   //Implement local strategy
-  passport.use(new LocalStrategy( (username, password, done) => {
+  passport.use(new LocalStrategy( (email, password, done) => {
     //Match username
-    let query = {username:username};
+    let query = {email:email};
     User.findOne(query, (err, user) => {
       if(err) throw err;
       if(!user){
@@ -24,8 +24,8 @@ module.exports = (passport) => {
     });
   }));
 
-  passport.serializeUser( (user, done) => {
-    done(null, user.id);
+  passport.serializeUser( (official, done) => {
+    done(null, official.id);
   });
 
   passport.deserializeUser( (id, done) => {

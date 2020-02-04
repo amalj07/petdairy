@@ -37,7 +37,7 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Bring in article model
-const Article = require('./models/livestock');
+const Livestock = require('./models/livestock');
 
 //Express session middleware
 app.use(session({
@@ -84,10 +84,10 @@ app.get('*', (req, res, next) => {
 
 //Home route
 app.get('/', (req, res) => {
-  Article.find({}).then( (articles) =>{
+  Livestock.find({}).then( (livestocks) =>{
     res.render('index', {
-      title: 'Artitcles',
-      articles: articles
+      title: 'Livestocks',
+      livestocks: livestocks
     });
   }).catch( (err) => {
     console.log(err);

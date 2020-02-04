@@ -26,28 +26,28 @@ let livestockSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    insured: {
-        type: Boolean,
-        default: false
-    },
-    insuranceno: {
-        type: Number,
-        required: true,
-        default: 00
-    },
-    alive: {
-        type: Boolean,
-        default: false
-    },
-    deathdate: {
-        type: String,
-    },
-    deathreason: {
-        type: String,
-    },
-    disease: {
-        type: String
-    }
+    // insured: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // insuranceno: {
+    //     type: Number,
+    //     required: true,
+    //     default: 00
+    // },
+    // alive: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // deathdate: {
+    //     type: String,
+    // },
+    // deathreason: {
+    //     type: String,
+    // },
+    // disease: {
+    //     type: String
+    // }
 
 });
 

@@ -4,6 +4,6 @@ block content
     h1 Livestock Details
 
     ul.list-group
-      each article, i in articles
+      each livestock, i in livestocks
         li.list-group-item
-          a(href='/articles/'+ article._id)= article.title
+          a(href='/livestocks/'+livestock._id)= livestock.animalid
