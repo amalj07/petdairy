@@ -94,6 +94,11 @@ app.get('/', (req, res) => {
   })
 });
 
+// Home Page
+app.get('/', (req,res) => {
+  res.render('./index.pug')
+})
+
 //Route files
 const livestocks = require('./routes/livestocks');
 const officials = require('./routes/officials');

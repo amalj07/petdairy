@@ -6,22 +6,22 @@ block content
     form(method='POST', action= '/livestocks/edit/'+livestock._id)
       #form-group
         label Owner ID
-        input.form-control(name='ownerid', type='text')
+        input.form-control(name='ownerid', type='text',value=livestock.ownerid)
       #form-group
         label Owner Name
-        input.form-control(name='ownername', type='text')
+        input.form-control(name='ownername', type='text',value=livestock.ownername)
       #form-group
         label Animal ID
-        input.form-control(name='animalid', type='text')
+        input.form-control(name='animalid', type='text',value=livestock.animalid)
       #form-group
         label Animal Type
-        input.form-control(name='animaltype', type='text')
+        input.form-control(name='animaltype', type='text',value=livestock.animaltype)
       #form-group
         label Birth Date
-        input.form-control(name='birthdate', type='text')
+        input.form-control(name='birthdate', type='text',value=livestock.birthdate)
       #form-group
         label Place
-        input.form-control(name='place', type='text')
+        input.form-control(name='place', type='text',value=livestock.place)
       //- #form-group
       //-   label Is the animal insured
       //-   br
